@@ -1,0 +1,28 @@
+# OS
+.DS_Store
+
+# Env files
+.env
+.env.* 
+!.env.example
+
+# Node
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Build outputs
+dist/
+.nuxt/
+.output/
+.vite/
+coverage/
+
+# Prisma / SQLite
+*.db
+*.db-journal
+
+# IDE
+.vscode/
+.idea/
