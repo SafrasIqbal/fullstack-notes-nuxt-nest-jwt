@@ -89,3 +89,8 @@ curl -X POST http://localhost:4000/notes \
   -H "Content-Type: application/json" \
   -H "Authorization: Bearer $TOKEN" \
   -d '{"text":"Hello from JWT"}'
+
+
+## Screenshot
+
+![App Screenshot](./screenshots/demo.png)
