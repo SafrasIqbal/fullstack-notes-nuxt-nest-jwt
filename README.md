@@ -75,20 +75,20 @@ Notes
 
 ## Example (curl)
 # Register
-curl -X POST http://localhost:4000/auth/register \
-  -H "Content-Type: application/json" \
-  -d '{"email":"test@example.com","password":"password123"}'
+    curl -X POST http://localhost:4000/auth/register \
+        -H "Content-Type: application/json" \
+        -d '{"email":"test@example.com","password":"password123"}'
 
 # Login
-TOKEN=$(curl -s -X POST http://localhost:4000/auth/login \
-  -H "Content-Type: application/json" \
-  -d '{"email":"test@example.com","password":"password123"}' | node -p "JSON.parse(fs.readFileSync(0,'utf8')).access_token")
+    TOKEN=$(curl -s -X POST http://localhost:4000/auth/login \
+    -H "Content-Type: application/json" \
+    -d '{"email":"test@example.com","password":"password123"}' | node -p "JSON.parse(fs.readFileSync(0,'utf8')).access_token")
 
 # Create note (protected)
-curl -X POST http://localhost:4000/notes \
-  -H "Content-Type: application/json" \
-  -H "Authorization: Bearer $TOKEN" \
-  -d '{"text":"Hello from JWT"}'
+    curl -X POST http://localhost:4000/notes \
+    -H "Content-Type: application/json" \
+    -H "Authorization: Bearer $TOKEN" \
+    -d '{"text":"Hello from JWT"}'
 
 
 ### Kubernetes (Docker Desktop)
