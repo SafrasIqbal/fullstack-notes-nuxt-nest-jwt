@@ -91,6 +91,22 @@ curl -X POST http://localhost:4000/notes \
   -d '{"text":"Hello from JWT"}'
 
 
+### Kubernetes (Docker Desktop)
+kubectl apply -f k8s/
+
+# Ingress (local)
+kubectl -n ingress-nginx port-forward svc/ingress-nginx-controller 8080:80
+
+Web: http://localhost:8080
+API: http://localhost:8080/api/notes
+
+
+#Security
+
+Passwords are hashed (bcrypt)
+JWT secret is not committed
+.env and DB files ignored
+
 ## Screenshot
 
 ![App Screenshot](./screenshots/demo.png)
