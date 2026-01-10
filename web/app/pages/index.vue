@@ -1,6 +1,13 @@
 <script setup lang="ts">
+//const config = useRuntimeConfig()
+//const apiBase = config.public.apiBase || 'http://localhost:4000'
+//const config = useRuntimeConfig()
+//await $fetch(`${config.public.apiBase}/notes`)
+
 const config = useRuntimeConfig()
-const apiBase = config.public.apiBase || 'http://localhost:4000'
+const apiBase = process.server ? config.apiBaseInternal : config.public.apiBase
+
+//const { data: notes } = await useFetch('/notes', { apiBase })
 
 type Note = { id: number; text: string; createdAt: string }
 
